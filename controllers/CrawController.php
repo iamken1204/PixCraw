@@ -10,7 +10,7 @@ class CrawController extends Controller
 {
     public function actionIndex() {
 
-    		$all = isset($_GET['all']) ? $_GET['all'] : '';
+    		// $all = isset($_GET['all']) ? $_GET['all'] : '';
     		$blogCode = isset($_GET['blog']) ? $_GET['blog'] : '';
     		$articleCode = isset($_GET['article']) ? $_GET['article'] : '';
 
@@ -18,25 +18,47 @@ class CrawController extends Controller
 				$articleList = array();
 
 				if(!empty($blogCode)){
-					for($i=1; $i<8; $i++){
-					    $url = 'https://www.pixnet.net/blog/bloggers/category/'.$blogCode.'/'.$i;
-					    $listCmd = $this->getBlogList($url);
-					    $accountList = array_merge($accountList, $listCmd);
-					}
+                    if($blogCode = 'all'){
+                        for($code=1; $code<44; $code++){
+                            for($i=1; $i<8; $i++){
+                                $url = 'https://www.pixnet.net/blog/bloggers/category/'.$code.'/'.$i;
+                                $listCmd = $this->getBlogList($url);
+                                $accountList = array_merge($accountList, $listCmd);
+                            }
+                        }
+                    }else{
+                        for($i=1; $i<8; $i++){
+                            $url = 'https://www.pixnet.net/blog/bloggers/category/'.$blogCode.'/'.$i;
+                            $listCmd = $this->getBlogList($url);
+                            $accountList = array_merge($accountList, $listCmd);
+                        }
+                    }
+
 					foreach($accountList as $a)
 					    echo "http://".$a.".pixnet.net/blog<BR>";
 				}
 
 				if(!empty($articleCode)){
-						for($i=1; $i<11; $i++){
-						    $url = 'https://www.pixnet.net/blog/articles/category/'.$articleCode.'/hot/'.$i;
-						    $listCmd = $this->getArticleList($url);
-						    $articleList = array_merge($articleList, $listCmd);
-						}
-						foreach($articleList as $a){
-						    $link = explode('post/', $a);
-						    echo $link[0]."<BR>";
-						}
+                    if($articleCode == 'all'){
+                        for($code=1; $code<45; $code++){
+                            for($i=1; $i<11; $i++){
+                                $url = 'https://www.pixnet.net/blog/articles/category/'.$code.'/hot/'.$i;
+                                $listCmd = $this->getArticleList($url);
+                                $articleList = array_merge($articleList, $listCmd);
+                            } 
+                        }
+                    }else{
+                        for($i=1; $i<11; $i++){
+                            $url = 'https://www.pixnet.net/blog/articles/category/'.$articleCode.'/hot/'.$i;
+                            $listCmd = $this->getArticleList($url);
+                            $articleList = array_merge($articleList, $listCmd);
+                        } 
+                    }
+
+                    foreach($articleList as $a){
+                        $link = explode('post/', $a);
+                        echo $link[0]."<BR>";
+                    } 
 				}
 
     }
