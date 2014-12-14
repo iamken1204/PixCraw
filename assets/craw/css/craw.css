@@ -1,0 +1,26 @@
+.wrap {
+	background-color: #FFFAFA;
+}
+
+.command {
+	background-color: #C0C0C0;
+	border-radius: 5px;
+}
+
+.result {
+	background-color: #D3D3D3;
+	border-radius: 5px;
+}
+
+.center {
+	margin: 0px auto;
+	width: 60%;
+}
+
+.inText {
+	padding: 10px 0px 10px 10px;
+}
+
+.reText {
+	padding: 5px 0px 5px 10px;
+}
