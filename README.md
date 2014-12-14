@@ -1,15 +1,14 @@
 Pixnet Crawler
 ================================
 
-Pixnet Crawler built on Yii2.0.
+Pixnet Crawler built on Yii2.0.   
 
 How to use
 -------------------
 
-Link to index, type `?article=9%blog=6` to get blog links.   
-Category number can type whichever you want.
+Insert whichever number you want to craw in input text area.   
 
 Developing features
 -------------------
-Prettified view   
-Craw all links: command `all`   
+Better ux, e.g. crawling icon   
+Improve stability   
