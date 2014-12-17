@@ -9,7 +9,7 @@ include("../components/simple_html_dom.php");
 class CrawController extends Controller {
 
     public function actionIndex() {
-            return $this->render('view_craw');
+        return $this->render('view_craw');
     }
 
     public function actionGetlink() {

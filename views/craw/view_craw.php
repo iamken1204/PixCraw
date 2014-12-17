@@ -12,13 +12,13 @@ CrawAsset::register($this);
 				<div class="inText">
 				  <div class="inline field">
 				    <div class="ui pointing right	 label">
-				      article = 
+				      article =
 				    </div>
 						<div class="ui mini input focus">
 						  <input type="text" id="artCode">
 						</div>
 				    <div class="ui pointing right	 label">
-				      blog = 
+				      blog =
 				    </div>
 						<div class="ui mini input focus">
 						  <input type="text" id="bloCode">
@@ -34,6 +34,12 @@ CrawAsset::register($this);
 			<div style="margin: 20px 0px 20px 0px;">
 				<b>#只要有一個欄位打all, article跟blog都會全爬喔</b><br>
 				總共抓取: <b id="count">0</b> 筆資料
+			</div>
+
+			<!-- <div class="ui active loader" id="loader"></div> -->
+			<div class="spinner center" id="loader">
+			  <div class="cube1"></div>
+			  <div class="cube2"></div>
 			</div>
 
 			<div class="result">
