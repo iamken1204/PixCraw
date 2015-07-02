@@ -14,13 +14,16 @@ Developing features
 ##### next version
 Improve stability
 
-##### v2.1
+##### v0.2.2 (EDGE edition)
+Refined fetching function
+
+##### v0.2.1
 Add loading icon
 
-##### v2.0
+##### v0.2.0
 Command `all`
 Prettified View
 Ajax crawler
 
-##### v1.1
+##### v0.1.1
 Command `article=` & `blog=`
